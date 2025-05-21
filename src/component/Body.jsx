@@ -1,16 +1,19 @@
 import React from 'react';
 
+const LoginStatus = (status) => {
+    if (status) {
+        return <button>Logout</button>
+    } else {
+        return <button>Login</button>
+    }
+}
+
 const Body = () => {
-    const citys = ["Delhi", "Mumbai", "Chennai", "Kolkata", "Bangalore"];
+
     return (
         <div>
-            <ol>
-                {
-                    citys.map((city, index) => {
-                        return <li key= {index}>{city}</li>
-                    })
-                }
-            </ol>
+            {LoginStatus(false)}
+            <LoginStatus status={true} />
         </div>
     );
 };
