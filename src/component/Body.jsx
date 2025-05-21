@@ -1,16 +1,14 @@
 import React from 'react';
 
-const action = true;
+const action = false;
 
 const Body = () => {
-     switch (action) {
-        case true:
-            return <button>Logout</button>
-        case false:
-            return <button>Login</button>
-        default:
-            return <button>Login</button>
-     }
+    return (
+        <div>
+            {action && <button>Login</button>}
+            {!action && <button>Logout</button>}
+        </div>
+    );
 };
 
 export default Body;
