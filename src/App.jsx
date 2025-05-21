@@ -1,9 +1,15 @@
 import React from 'react';
 import Body from './component/Body';
+
+const person = {
+  name: "iabur",
+  age: 30,
+  city: "Dhaka"
+}
 const App = () => {
   return (
     <div>
-      <Body content="I am a body component" form="I am a form component"/>
+      <Body item={person}/>
     </div>
   );
 };

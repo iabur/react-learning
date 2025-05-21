@@ -3,8 +3,11 @@ import React from 'react';
 const Body = (props) => {
     return (
         <div>
-            <h1>{props.content}</h1>
-            <h1>{props.form}</h1>
+            <ul>
+                <li>{props.item.name}</li>
+                <li>{props.item.age}</li>
+                <li>{props.item.city}</li>
+            </ul>
         </div>
     );
 };
