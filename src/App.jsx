@@ -1,22 +1,15 @@
-import React from 'react';
-import Body from './component/Body';
+import React, { useRef } from 'react';
 
 
 const App = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target.elements[0].value);
-    console.log(e.target.elements[1].value);
-    console.log(e.target.elements[2].value);
+  let h1Ref = useRef(null);
+  const handleClick = () => {
+    h1Ref.current.style.color = "red";
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Enter your name" />
-        <input type="email" placeholder="Enter your email" />
-        <input type="password" placeholder="Enter your password" />
-        <button type="submit">Submit</button>
-      </form>
+      <h1 ref={h1Ref}>Hello World</h1>
+      <button onClick={handleClick}>Click Me</button>
     </div>
   );
 };
