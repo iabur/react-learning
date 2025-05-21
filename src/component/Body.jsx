@@ -1,13 +1,11 @@
 import React from 'react';
 
+
+
 const Body = (props) => {
     return (
         <div>
-            <ul>
-                <li>{props.item.name}</li>
-                <li>{props.item.age}</li>
-                <li>{props.item.city}</li>
-            </ul>
+            <button onClick={props.childToParent}>Click Me</button>
         </div>
     );
 };
