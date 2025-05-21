@@ -1,12 +1,10 @@
 import React from 'react';
 
-const action = false;
-
-const Body = () => {
+const Body = (props) => {
     return (
         <div>
-            {action && <button>Login</button>}
-            {!action && <button>Logout</button>}
+            <h1>{props.content}</h1>
+            <h1>{props.form}</h1>
         </div>
     );
 };
