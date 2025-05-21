@@ -1,14 +1,13 @@
 import React from 'react';
 import Body from './component/Body';
-
-const ButtonClick = () => {
+function ClickMe() {
   alert("Button clicked");
 }
 
 const App = () => {
   return (
     <div>
-      <Body childToParent={ButtonClick}/>
+      <button onClick={ClickMe}>Click Me</button>
     </div>
   );
 };
