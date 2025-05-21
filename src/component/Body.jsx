@@ -1,21 +1,16 @@
 import React from 'react';
 
 const Body = () => {
-    var markes = 100;
+    const citys = ["Delhi", "Mumbai", "Chennai", "Kolkata", "Bangalore"];
     return (
         <div>
-
-            {
-                (
-                    () => {
-                        if (markes > 50) {
-                            return <h1>You are passed</h1>
-                        } else {
-                            return <h1>You are failed </h1>
-                        }
-                    }
-                )  ()
-            }
+            <ol>
+                {
+                    citys.map((city, index) => {
+                        return <li key= {index}>{city}</li>
+                    })
+                }
+            </ol>
         </div>
     );
 };
