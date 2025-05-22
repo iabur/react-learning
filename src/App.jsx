@@ -1,15 +1,11 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
+import HubspotForm from './component/HubspotForm';
 
 const App = () => {
-  let h1Ref = useRef(null);
-  const handleClick = () => {
-    h1Ref.style.color = "red";
-  }
   return (
     <div>
-      <h1 ref={(p) => h1Ref = p}>Hello World</h1>
-      <button onClick={handleClick}>Click Me</button>
+       <HubspotForm />
     </div>
   );
 };
