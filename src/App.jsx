@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 
 const App = () => {
-  let nameRef, ageRef;
+  let h1Ref = useRef(null);
+  
   const handleClick = () => {
-    alert(`Name: ${nameRef.value}, Age: ${ageRef.value}`);
+    h1Ref.current.classList.remove('text-danger');
+    h1Ref.current.classList.add('text-success');
   }
   return (
     <div>
-       <input ref={(el) => nameRef = el} placeholder='Enter your name' type="text" />
-       <input ref={(el) => ageRef = el} placeholder='Enter your age' type="text" />
+       <h1 ref={h1Ref} className='text-danger'>Hello World</h1>
        <button onClick={handleClick}>Click Me</button>
     </div>
   );
