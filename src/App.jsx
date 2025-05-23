@@ -4,13 +4,19 @@ import React, { useEffect, useState } from 'react';
 
 const App = () => {
 
+  const [posts, setPosts] = useState([]);
+
   useEffect(() => {
-    console.log('Mounting')
+      fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(res => res.json())
+      .then(data => setPosts(data))
   }, [])
 
   return (
     <div>
-      <h1>Hello World</h1>
+      {posts.map(post => (
+        <h1 key={post.id}>{post.id} {post.title} {post.body}</h1>
+      ))}
     </div>
 
   );
