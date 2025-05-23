@@ -2,15 +2,22 @@ import React, { useState } from 'react';
 
 
 const App = () => {
-  const [number, setNumber] = useState(0);
+  const [person, setPerson] = useState({
+    name: 'Iabur',
+    age: 30
+  });
  
   const handleClick = () => {
-    setNumber(number + 1);
+    setPerson(previousPerson => ({
+        ...previousPerson,
+        age: previousPerson.age + 1
+    }))
   }
-  
+
   return (
     <div>
-       <h1>Number: {number}</h1>
+       <h1>Name: {person.name}</h1>
+       <h1>Age: {person.age}</h1>
        <button onClick={handleClick} className='btn btn-primary'>Click Me</button>
     </div>
   );
