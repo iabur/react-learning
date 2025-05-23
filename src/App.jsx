@@ -1,27 +1,17 @@
-import { Dropdown } from 'bootstrap';
-import React, { useEffect, useState } from 'react';
-
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProfilePage from './pages/ProfilePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const App = () => {
-
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-      const data = await res.json()
-      setPosts(data)  
-    })()
-
-  }, [])
-
   return (
     <div>
-      {posts.map(post => (
-        <h1 key={post.id}>{post.id} {post.title} {post.body}</h1>
-      ))}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </div>
-
   );
 };
 
