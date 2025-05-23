@@ -1,24 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 
 
 const App = () => {
-  let data = useRef(null);
-  let h1Ref = useRef(null);
-
-  const getData = async () => {
-    let response = await fetch('https://jsonplaceholder.typicode.com/posts');
-    data = await response.json();
+  const [number, setNumber] = useState(0);
+ 
+  const handleClick = () => {
+    setNumber(number + 1);
   }
-
-  const showData = () => {
-    h1Ref.current.innerHTML = JSON.stringify(data);
-  }
-
+  
   return (
     <div>
-       <button onClick={getData} className='btn btn-primary'>Get Data</button>
-       <button onClick={showData} className='btn btn-success'>Show Data</button>
-       <h1 ref={h1Ref}></h1>
+       <h1>Number: {number}</h1>
+       <button onClick={handleClick} className='btn btn-primary'>Click Me</button>
     </div>
   );
 };
