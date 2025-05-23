@@ -1,0 +1,11 @@
+.active-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pending-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}

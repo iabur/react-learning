@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
+import '../assets/css/Style.css';
 const Menu = () => {
     return (
         <div>
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/profile">Profile</Link></li>
+                <li><NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : 'pending-link'}>Home</NavLink></li>
+                <li><NavLink to="/profile" className={({ isActive }) => isActive ? 'active-link' : 'pending-link'} >Profile</NavLink></li>
             </ul>
         </div>  
     );
