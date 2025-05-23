@@ -1,15 +1,15 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 
 const App = () => {
-  let imgRef = useRef(null);
+  let nameRef, ageRef;
   const handleClick = () => {
-    imgRef.current.setAttribute("height", "1000px");
-    imgRef.current.setAttribute("width", "1000px");
+    alert(`Name: ${nameRef.value}, Age: ${ageRef.value}`);
   }
   return (
     <div>
-      <img ref={imgRef} src="https://placehold.co/600x400" alt="placeholder" />
+       <input ref={(el) => nameRef = el} placeholder='Enter your name' type="text" />
+       <input ref={(el) => ageRef = el} placeholder='Enter your age' type="text" />
        <button onClick={handleClick}>Click Me</button>
     </div>
   );
