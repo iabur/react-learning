@@ -1,8 +1,10 @@
 import React from 'react';
+import Menu from '../component/Menu';
 
 const HomePage = () => {
   return (
     <div className="container">
+        <Menu />
         <div className="row">
             <div className="column">
                 <h1>Welcome</h1>
