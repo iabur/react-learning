@@ -1,17 +1,32 @@
-import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import ProfilePage from './pages/ProfilePage';
-import NotFoundPage from './pages/NotFoundPage';
+import OtherComponent from "./component/OtherComponent";
+import { useCounterStore } from "./Store";
+import { useEffect } from "react";
+
+
+const logCount = () => {
+  const count = useCounterStore.getState().count;
+  console.log(count);
+}
+
+
+const setCount = () => {
+  useCounterStore.setState({count: 10});
+}
+
 const App = () => {
+  const count= useCounterStore((state) => state.count);
+
+  useEffect(() => {
+    setCount(); 
+  }, []);
+
+  useEffect(() => {
+    logCount();
+  }, []);
+  
   return (
       <div>
-        <HashRouter>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/profile/:id/:name" element={<ProfilePage />} />
-            <Route path="/*" element={<NotFoundPage />} />
-        </Routes>
-      </HashRouter>
+        <OtherComponent count={count}/>
     </div>
   );
 };
